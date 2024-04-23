@@ -4,7 +4,7 @@
 
 This repository is included in our open-source Pro Support service which offers an efficient solution for managing popular GitHub Actions dependencies with ease:
 
-🙌 forked from [ytanikin/PRConventionalCommits](https://github.com/ytanikin/PRConventionalCommits)
+🙌 forked from [anc95/ChatGPT-CodeReview](https://github.com/anc95/ChatGPT-CodeReview)
 
 <details>
 
@@ -70,7 +70,7 @@ jobs:
     # if: ${{ contains(github.event.*.labels.*.name, 'gpt review') }} # Optional; to run only when a label is attached
     runs-on: ubuntu-latest
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
+      - uses: repo-racers/gpt-codereview-action@v0.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
