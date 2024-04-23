@@ -1,8 +1,8 @@
-name: ChatGPT CodeReviewer
+name: ChatGPT CodeReviewer - Repo Racers Pro Support
 description: 'A Code Review Action Powered By ChatGPT'
 branding:
-  icon: 'gift'
-  color: orange
+  icon: 'git-pull-request'
+  color: blue
 runs:
   using: 'node20'
   main: 'action/index.cjs'

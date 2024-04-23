@@ -1,39 +1,55 @@
-# CodeReview BOT
+<a href="https://reporacers.com/" taarget="_blank">
+  <img src="https://github.com/repo-racers/.github/blob/main/profile/repo-racers.svg" alt="Repo Raacers" width="600px"/>
+</a>
 
-> A code review robot powered by ChatGPT
+This repository is included in our open-source Pro Support service which offers an efficient solution for managing popular GitHub Actions dependencies with ease:
 
-Translation Versions: [ENGLISH](./README.md) | [简体中文](./README.zh-CN.md) | [繁體中文](./README.zh-TW.md) | [한국어](./README.ko.md) | [日本語](./README.ja.md)
+🙌 forked from [ytanikin/PRConventionalCommits](https://github.com/ytanikin/PRConventionalCommits)
 
-## Bot Usage
+<details>
 
-❗️⚠️ `Due to cost considerations, BOT is only used for testing purposes and is currently deployed on AWS Lambda with ratelimit restrictions. Therefore, unstable situations are completely normal. It is recommended to deploy an app by yourself.`
+<summary>What is Open-Source Pro Support?</summary>
 
-### Install
+Open-Source Pro Support is a comprehensive service designed to streamline your workflow by providing:
 
-Install: [apps/cr-gpt](https://github.com/apps/cr-gpt);
+- **Customized Forks:** We create public forks of popular GitHub Actions, ensuring you have access to the latest features and fixes.
+  
+- **Dedicated Technical Support:** Say goodbye to the hassle of managing multiple open-source dependencies. With our service, you have a single point of contact for all your support needs. Reach out to us on our [Discord](https://discord.com/channels/1229786735161118882/1229786735161118885) server, and our team of experts will be ready to assist you.
+  
+- **Priority Fixes:** Experience seamless issue resolution with our priority fix service. If you encounter any issues with our forks, we prioritize fixing them promptly to minimize disruptions to your workflow.
+  
+- **Community Contribution:** We believe in giving back to the open-source community. When we fix issues in our forks, we handle creating pull requests to the original authors, ensuring that the entire community benefits from the improvements.
 
-### Configuration
+</details>
 
-1. Go to the repo homepage which you want integrate this bot
-2. click `settings`
-3. click `actions` under `secrets and variables`
-4. Change to `Variables` tab, create a new variable `OPENAI_API_KEY` with the value of your open api key (For Github Action integration, set it in secrets)
-   <img width="1465" alt="image" src="https://user-images.githubusercontent.com/13167934/218533628-3974b70f-c423-44b0-b096-d1ec2ace85ea.png">
+<details>
 
-### Start using
+<summary>How It Works</summary>
 
-1. The robot will automatically do the code review when you create a new Pull request, the review information will show in the pr timeline / file changes part.
-2. After `git push` update the pull request, cr bot will re-review the changed files
 
-example:
+1. **Choose Our Fork:** Instead of referencing popular GitHub Actions repositories directly, simply reference this repository in your workflow.
+   
+2. **Enjoy Dedicated Support:** If you encounter any issues or need assistance, reach out to us on our [Discord](https://discord.com/channels/1229786735161118882/1229786735161118885) server. Our team will be happy to help you promptly.
+   
+3. **Benefit from Priority Fixes:** Experience seamless issue resolution with our priority fix service. We prioritize fixing issues in our forks to ensure smooth operation for your projects.
+   
+4. **Contribute to the Community:** Rest assured that when we fix issues in our forks, we contribute back to the original repositories, benefiting the entire open-source community.
 
-[ChatGPT-CodeReview/pull/21](https://github.com/anc95/ChatGPT-CodeReview/pull/21)
+*Not Your Thing?*
 
-<img width="1052" alt="image" src="https://user-images.githubusercontent.com/13167934/218999459-812206e1-d8d2-4900-8ce8-19b5b6e1f5cb.png">
+We don't want to get in between you and the community. If you want to handle forking and submitting a pull request yourself, that's awesome.
 
-## Using Github Actions
+However, feel free to reach out to us on [Discord](https://discord.com/channels/1229786735161118882/1229786735161118885) anyway if you need any help and advice in doing so.
 
-[actions/chatgpt-codereviewer](https://github.com/marketplace/actions/chatgpt-codereviewer)
+:heart: [open-source](https://opensource.org/)
+
+</details>
+
+---
+
+# ChatGPT CodeReviewer
+
+## Usage Instructions
 
 1. add the `OPENAI_API_KEY` to your github actions secrets
 2. create `.github/workflows/cr.yml` add bellow content
@@ -69,7 +85,7 @@ jobs:
           MAX_PATCH_LENGTH: 10000 # if the patch/diff length is large than MAX_PATCH_LENGTH, will be ignored and won't review. By default, with no MAX_PATCH_LENGTH set, there is also no limit for the patch/diff length.
 ```
 
-## Self-hosting
+### Self-hosting
 
 1. clone code
 2. copy `.env.example` to `.env`, and fill the env variables
@@ -84,7 +100,6 @@ pm2 start pm2.config.cjs
 
 [probot](https://probot.github.io/docs/development/) for more detail
 
-## Dev
 
 ### Setup
 
@@ -108,17 +123,8 @@ docker build -t cr-bot .
 # 2. Start container
 docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> cr-bot
 ```
+---
 
-## Contributing
+> [!TIP]
+> For support with this repo and many other open-source projects, visit us at https://reporacers.com/ and join us on  [Discord](https://discord.com/channels/1229786735161118882/1229786735161118885).
 
-If you have suggestions for how cr-bot could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
-
-For more, check out the [Contributing Guide](CONTRIBUTING.md).
-
-## Credit
-
-this project is inpired by [codereview.gpt](https://github.com/sturdy-dev/codereview.gpt)
-
-## License
-
-[ISC](LICENSE) © 2023 anc95
